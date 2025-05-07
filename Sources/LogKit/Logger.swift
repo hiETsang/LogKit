@@ -170,7 +170,7 @@ public extension Logger {
 
 /// Log levels
 public extension Logger {
-    enum LogLevel: Int, Comparable {
+    enum LogLevel: Int, Comparable, Sendable{
         case debug = 0
         case info = 1
         case notice = 2
