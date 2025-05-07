@@ -2,7 +2,7 @@ import Foundation
 import OSLog
 
 /// Core logger
-public class Logger {
+public class Logger: @unchecked Sendable {
     /// Shared instance
     public static let shared = Logger()
 
