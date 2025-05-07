@@ -61,9 +61,14 @@
 ```swift
 import LogKit
 
+// 简化 API（推荐）
+Log.debug("调试信息")
+Log.info("普通信息", category: .network)
+Log.error("发生错误", category: .database)
+
+// 其他使用方式
 Logger.shared.debug("调试信息")
-Logger.shared.info("普通信息", category: .network)
-Logger.shared.error("发生错误", category: .database)
+Logger.info("普通信息", category: .network)
 ```
 
 ### 2. 自定义日志分类
@@ -74,14 +79,18 @@ extension Logger.Category {
     public static let onboarding = "onboarding"
 }
 
-Logger.shared.info("支付成功", category: .payment)
+Log.info("支付成功", category: .payment)
 ```
 
 ### 3. 静态方法调用
 
 ```swift
+// 简化 API
+Log.debug("静态调试日志")
+Log.error("静态错误日志", category: .database)
+
+// 其他方式
 Logger.debug("静态调试日志")
-Logger.error("静态错误日志", category: .database)
 ```
 
 ### 4. 文件日志管理

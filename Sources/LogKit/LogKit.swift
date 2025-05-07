@@ -5,9 +5,9 @@ import OSLog
 ///
 /// Examples:
 /// ```
-/// Logger.debug("Debug message")
-/// Logger.info("Info message", category: .network)
-/// Logger.error("Error message", category: .database)
+/// Log.debug("Debug message")
+/// Log.info("Info message", category: .network)
+/// Log.error("Error message", category: .database)
 /// ```
 
 // Core types

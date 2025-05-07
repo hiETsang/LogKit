@@ -61,9 +61,14 @@ Six built-in log levels, type-safe, covering all common scenarios:
 ```swift
 import LogKit
 
+// Simplified API (recommended)
+Log.debug("Debug info")
+Log.info("General info", category: .network)
+Log.error("An error occurred", category: .database)
+
+// Alternative ways
 Logger.shared.debug("Debug info")
-Logger.shared.info("General info", category: .network)
-Logger.shared.error("An error occurred", category: .database)
+Logger.info("General info", category: .network)
 ```
 
 ### 2. Custom Log Categories
@@ -74,14 +79,18 @@ extension Logger.Category {
     public static let onboarding = "onboarding"
 }
 
-Logger.shared.info("Payment succeeded", category: .payment)
+Log.info("Payment succeeded", category: .payment)
 ```
 
 ### 3. Static Method Calls
 
 ```swift
+// Simplified API
+Log.debug("Static debug log")
+Log.error("Static error log", category: .database)
+
+// Alternative
 Logger.debug("Static debug log")
-Logger.error("Static error log", category: .database)
 ```
 
 ### 4. File Log Management
